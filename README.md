@@ -6,8 +6,7 @@ Schritt 1: Projekt erstellen
   Zu Beginn öffnen wir Visual Studio und erstellen ein neues Projekt.
   Als Projekt wählen wir Visual C# => Android => Android-App (Xamarin)
 
-  projectCreate.png
-
+  ![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectCreate.png)
 
   Anschließend wählen wir im Fenster danach Registerkarten-App aus
 
