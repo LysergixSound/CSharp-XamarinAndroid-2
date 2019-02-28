@@ -1,6 +1,10 @@
 Android Development mit C# Xamarin Tutorial #2: Fragment Navigation
 ===================================================================
 
+1. First list item
+    - First nested list item
+     - Second nested list item
+
 Schritt 1: Projekt erstellen
 ============================
   Zu Beginn öffnen wir Visual Studio und erstellen ein neues Projekt.
