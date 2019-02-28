@@ -3,14 +3,14 @@ Android Development mit C# Xamarin Tutorial #2: Fragment Navigation
 
 Schritt 1: Projekt erstellen
 ============================
-  Zu Beginn öffnen wir Visual Studio und erstellen ein neues Projekt.
-  Als Projekt wählen wir Visual C# => Android => Android-App (Xamarin)
+Zu Beginn öffnen wir Visual Studio und erstellen ein neues Projekt.
+Als Projekt wählen wir Visual C# => Android => Android-App (Xamarin)
 
-  ![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectCreate.png)
+![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectCreate.png)
 
-  Anschließend wählen wir im Fenster danach Registerkarten-App aus
+Anschließend wählen wir im Fenster danach Registerkarten-App aus
 
-  ![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectCreateStyle.png)
+![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectCreateStyle.png)
 
 Kurze Erklärung:
 ================
@@ -21,16 +21,14 @@ Unser erstelltes Projekt sollte nun folgende Hierarchie haben
 Die interessantesten Datein und Ordner zum Anfang sind für uns:
 1. \MainActivity.cs
    * Diese Datei enthählt die Logik für unsere MainActivity, sozusagen unser Start Fenster
-  
+2. \Resources\layout
+   * Dieser Ordner enthählt unsere designten Layouts die wir anzeigen können zu sehen ist auch die Datei activity_main.axml die unser grafisches Layout für MainActivity.cs in XML Form beinhaltet.
+3. \Resources\menu\navigation.xml
+   * Da wir uns für eine Registerkarten-App entschieden haben, wird in unserer App eine untere Navigationsleiste angezeigt. In dieser Datei können wir die angezeigten Menü Items in XML Form definieren
+4. \Resources\values\strings.xml
+   * Hier können wir Strings, also Texte, definieren, die wir später im Code und im XML wie Variablen abrufen können. 
 
-  2. \Resources\layout
-    - Dieser Ordner enthählt unsere designten Layouts die wir anzeigen können zu sehen ist auch die Datei activity_main.axml die unser grafisches Layout für MainActivity.cs in XML Form beinhaltet.
-  3. \Resources\menu\navigation.xml
-    - Da wir uns für eine Registerkarten-App entschieden haben, wird in unserer App eine untere Navigationsleiste angezeigt. In dieser Datei können wir die angezeigten Menü Items in XML Form definieren
-  4. \Resources\values\strings.xml
-    - Hier können wir Strings, also Texte, definieren, die wir später im Code und im XML wie Variablen abrufen können.  
-
-   MainActivity Code erklärt:
+MainActivity Code erklärt:
 
 
 Schritt 2: Navigationsleiste anpassen:
