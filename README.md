@@ -228,54 +228,55 @@ Unser FrameLayout haben wir content_frame genannt.
 In unserer \MainActivity.cs erstellen wir nun eine Liste mit unseren Fragmenten und laden diese dann in unser content_frame
 Der Code sieht wie folgt aus:
 
-        ```cs
-        // Liste unserer Fragmente definieren
-        List<Android.Support.V4.App.Fragment> fragments;
+```cs
+// Liste unserer Fragmente definieren
+List<Android.Support.V4.App.Fragment> fragments;
 
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
+protected override void OnCreate(Bundle savedInstanceState)
+{
+  base.OnCreate(savedInstanceState);
 
-            // unser Layout \Resource\layout\activity_main.axml laden
-            SetContentView(Resource.Layout.activity_main);
+  // unser Layout \Resource\layout\activity_main.axml laden
+  SetContentView(Resource.Layout.activity_main);
 
 
-            fragments = new List<Android.Support.V4.App.Fragment>();  // Liste erstellen
-            fragments.Add(new FragmentHome());                        // FragmentHome hinzufügen
-            fragments.Add(new FragmentSettings());                    // FragmentSettings hinzufügen
+  fragments = new List<Android.Support.V4.App.Fragment>();  // Liste erstellen
+  fragments.Add(new FragmentHome());                        // FragmentHome hinzufügen
+  fragments.Add(new FragmentSettings());                    // FragmentSettings hinzufügen
 
-            // Lade start Fragment (In unserem Fall FragmentHome)
-            SupportFragmentManager.BeginTransaction()
-                                    .Replace(Resource.Id.content_frame, fragments[0])
-                                    .Commit();
+  // Lade start Fragment (In unserem Fall FragmentHome)
+  SupportFragmentManager.BeginTransaction()
+                        .Replace(Resource.Id.content_frame, fragments[0])
+                        .Commit();
 
-            // Unter Navigationsleiste holen und Click Event Handler setzen
-            // event Methode public bool OnNavigationItemSelected(IMenuItem item)
-            BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
-            navigation.SetOnNavigationItemSelectedListener(this);
-        }
-        public bool OnNavigationItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                // Navigationsitem Home (Übersicht) wurde gedrückt
-                case Resource.Id.navigation_home:
-                    // Lade Übersichtsfragment
-                    SupportFragmentManager.BeginTransaction()
-                                            .Replace(Resource.Id.content_frame, fragments[0])
-                                            .Commit();
-                    return true;
+  // Unter Navigationsleiste holen und Click Event Handler setzen
+  // event Methode public bool OnNavigationItemSelected(IMenuItem item)
+  BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
+  navigation.SetOnNavigationItemSelectedListener(this);
+}
 
-                // Navigationsitem Settings (Einstellungen) wurde gedrückt
-                case Resource.Id.navigation_settings:
-                    // Lade Einstellungsfragment
-                    SupportFragmentManager.BeginTransaction()
-                                            .Replace(Resource.Id.content_frame, fragments[1])
-                                            .Commit();
-                    return true;
-            }
-            return false;
-        }
-        ```
+public bool OnNavigationItemSelected(IMenuItem item)
+{
+  switch (item.ItemId)
+  {
+    // Navigationsitem Home (Übersicht) wurde gedrückt
+    case Resource.Id.navigation_home:
+      // Lade Übersichtsfragment
+      SupportFragmentManager.BeginTransaction()
+                            .Replace(Resource.Id.content_frame, fragments[0])
+                            .Commit();
+      return true;
+
+    // Navigationsitem Settings (Einstellungen) wurde gedrückt
+    case Resource.Id.navigation_settings:
+      // Lade Einstellungsfragment
+      SupportFragmentManager.BeginTransaction()
+                            .Replace(Resource.Id.content_frame, fragments[1])
+                            .Commit();
+      return true;
+  }
+  return false;
+}
+```
         
 Das wars auch. Wir haben nun eine App mit 2 Seiten zwischen denen wir mittels einer BottemNavigationBar navigieren können.
