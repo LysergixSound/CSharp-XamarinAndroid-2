@@ -10,14 +10,13 @@ Schritt 1: Projekt erstellen
 
   Anschließend wählen wir im Fenster danach Registerkarten-App aus
 
-  projectCreateStyle.png
-
+  ![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectCreateStyle.png)
 
 Kurze Erklärung:
 ================
   Unser erstelltes Projekt sollte nun folgende Hierarchie haben
 
-  projectHierarchie.png
+  ![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectHierarchie.png)
 
   Die interessantesten Datein und Ordner zum Anfang sind für uns:
     MainActivity.cs => Diese Datei enthählt die Logik für unsere MainActivity, sozusagen unser Start Fenster
@@ -52,10 +51,10 @@ Schritt 2: Navigationsleiste anpassen:
   </menu>
 
   Jetzt haben wir zwei Menü Items erstellt.
-  # android:id => Gibt die ID an. Mit dieser können wir später im Code auf unser Layout Objekt zugreifen
+  android:id => Gibt die ID an. Mit dieser können wir später im Code auf unser Layout Objekt zugreifen
                   z.B. FindViewByID<TextView>(Resource.Id.textView1)
-  # android:icon => verweist auf eine Bilddatei im drawable Ordner
-  # android:title => Hier kann man den Text festlegen. In diesem Fall verweisen wir auf einen festgelegten String in der Resource\values\strings.xml Datei
+  android:icon => verweist auf eine Bilddatei im drawable Ordner
+  android:title => Hier kann man den Text festlegen. In diesem Fall verweisen wir auf einen festgelegten String in der Resource\values\strings.xml Datei
 
 
   Danach müssen wir die Resource\values\strings.xml Datei bearbeiten damit sie wie folgt aussieht:
@@ -74,8 +73,7 @@ Schritt 3: Fragmente (Seiten) erstellen
     fragment_home.axml
     fragment_settings.axml
 
-  projectFragmentCreate.png
-
+  ![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectFragmentCreate.png)
 
   Beide Layouts beinhalten nur einen Button. Die Datei sieht wie folgt aus:
 
@@ -121,7 +119,7 @@ Schritt 3: Fragmente (Seiten) erstellen
       FragmentHome.cs
       FragmentSettings.cs
 
-    projectFragmentCreateCode.png
+    ![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectFragmentCreateCode.png)
 
     Den Code der Dateien ändern wir wie folgt ab:
       FragmentHome.cs
@@ -216,8 +214,8 @@ Schritt 4: Unsere erstellten Fragmente der MainActivity zuweisen
   In unserer \MainActivity.cs erstellen wir nun eine Liste mit unseren Fragmenten und laden diese dann in unser content_frame
   Der Code sieht wie folgt aus:
 
-  // Liste unserer Fragmente definieren
-  List<Android.Support.V4.App.Fragment> fragments;
+        // Liste unserer Fragmente definieren
+        List<Android.Support.V4.App.Fragment> fragments;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -264,4 +262,4 @@ Schritt 4: Unsere erstellten Fragmente der MainActivity zuweisen
             return false;
         }
 
-    Das wars auch. Wir haben nun eine App mit 2 Seiten zwischen denen wir mittels einer BottemNavigationBar navigieren können.
+  Das wars auch. Wir haben nun eine App mit 2 Seiten zwischen denen wir mittels einer BottemNavigationBar navigieren können.
