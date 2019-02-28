@@ -14,14 +14,15 @@ Schritt 1: Projekt erstellen
 
 Kurze Erklärung:
 ================
-  Unser erstelltes Projekt sollte nun folgende Hierarchie haben
+Unser erstelltes Projekt sollte nun folgende Hierarchie haben
 
-  ![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectHierarchie.png)
+![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectHierarchie.png)
 
-  Die interessantesten Datein und Ordner zum Anfang sind für uns:
-  1. \MainActivity.cs
+Die interessantesten Datein und Ordner zum Anfang sind für uns:
+1. \MainActivity.cs
+   * Diese Datei enthählt die Logik für unsere MainActivity, sozusagen unser Start Fenster
   
-    - Diese Datei enthählt die Logik für unsere MainActivity, sozusagen unser Start Fenster
+
   2. \Resources\layout
     - Dieser Ordner enthählt unsere designten Layouts die wir anzeigen können zu sehen ist auch die Datei activity_main.axml die unser grafisches Layout für MainActivity.cs in XML Form beinhaltet.
   3. \Resources\menu\navigation.xml
