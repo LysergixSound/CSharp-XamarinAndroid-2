@@ -33,52 +33,53 @@ MainActivity Code erklärt:
 
 Schritt 2: Navigationsleiste anpassen:
 ======================================
-  In diesem Schritt passen wir unsere Menü Items an.
-  öffnet Resources\menu\navigation.xml und ändert den Code wie folgt ab.
+In diesem Schritt passen wir unsere Menü Items an.
+öffnet Resources\menu\navigation.xml und ändert den Code wie folgt ab.
 
-  <?xml version="1.0" encoding="utf-8"?>
-  <menu xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+    android:id="@+id/navigation_home"
+    android:icon="@drawable/ic_home_black_24dp"
+    android:title="@string/title_home" />
 
-      <item
-          android:id="@+id/navigation_home"
-          android:icon="@drawable/ic_home_black_24dp"
-          android:title="@string/title_home" />
+  <item
+    android:id="@+id/navigation_settings"
+    android:icon="@drawable/ic_dashboard_black_24dp"
+    android:title="@string/title_settings" />
 
-      <item
-          android:id="@+id/navigation_settings"
-          android:icon="@drawable/ic_dashboard_black_24dp"
-          android:title="@string/title_settings" />
+</menu>
 
-  </menu>
-
-  Jetzt haben wir zwei Menü Items erstellt.
-  android:id => Gibt die ID an. Mit dieser können wir später im Code auf unser Layout Objekt zugreifen
-                  z.B. FindViewByID<TextView>(Resource.Id.textView1)
-  android:icon => verweist auf eine Bilddatei im drawable Ordner
-  android:title => Hier kann man den Text festlegen. In diesem Fall verweisen wir auf einen festgelegten String in der Resource\values\strings.xml Datei
+Jetzt haben wir zwei Menü Items erstellt.
+1. android:id
+   * Gibt die ID an. Mit dieser können wir später im Code auf unser Layout Objekt zugreifen / z.B. FindViewByID<TextView>(Resource.Id.textView1)
+2. android:icon
+   * verweist auf eine Bilddatei im drawable Ordner (Resource.Id.textView1)
+3. android:title
+   * Hier kann man den Text festlegen. In diesem Fall verweisen wir auf einen festgelegten String in der Resource\values\strings.xml Datei
 
 
-  Danach müssen wir die Resource\values\strings.xml Datei bearbeiten damit sie wie folgt aussieht:
+Danach müssen wir die Resource\values\strings.xml Datei bearbeiten damit sie wie folgt aussieht:
 
-  <resources>
-    <string name="app_name">FirstApp</string>
-    <string name="title_home">Übersicht</string>
-    <string name="title_settings">Einstellungen</string>
-  </resources>
+<resources>
+  <string name="app_name">FirstApp</string>
+  <string name="title_home">Übersicht</string>
+  <string name="title_settings">Einstellungen</string>
+</resources>
 
 
 Schritt 3: Fragmente (Seiten) erstellen
 =======================================
-  Als nächstes erstellen wir uns Fragmente die unsere Seiten, zwischen denen wir navigieren können, festlegen.
-  Dazu erstellen wir 2 Android-Layout Dateien im Resource\layout Ordner
-    fragment_home.axml
-    fragment_settings.axml
+Als nächstes erstellen wir uns Fragmente die unsere Seiten, zwischen denen wir navigieren können, festlegen.
+Dazu erstellen wir 2 Android-Layout Dateien im Resource\layout Ordner
+  1. fragment_home.axml
+  2. fragment_settings.axml
 
-  ![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectFragmentCreate.png)
+![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectFragmentCreate.png)
 
-  Beide Layouts beinhalten nur einen Button. Die Datei sieht wie folgt aus:
+Beide Layouts beinhalten nur einen Button. Die Datei sieht wie folgt aus:
 
-    fragment_home.axml
+1. fragment_home.axml
       <?xml version="1.0" encoding="utf-8"?>
       <LinearLayout
       	xmlns:android="http://schemas.android.com/apk/res/android"
@@ -97,7 +98,7 @@ Schritt 3: Fragmente (Seiten) erstellen
 
       </LinearLayout>
 
-    fragment_settings.axml
+2. fragment_settings.axml
       <?xml version="1.0" encoding="utf-8"?>
       <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
           android:orientation="vertical"
@@ -115,15 +116,15 @@ Schritt 3: Fragmente (Seiten) erstellen
 
       </LinearLayout>
 
-    Wir haben jetzt 2 Layouts designt die jeweils einen Button enthalten. Die Buttons haben wir buttonSettings und buttonHome genannt.
-    Nun erstellen wir unsere Code Datein für die Fragmente. Dazu erstellen wir direkt in userem Projekt \ 2 Fragmente:
-      FragmentHome.cs
-      FragmentSettings.cs
+Wir haben jetzt 2 Layouts designt die jeweils einen Button enthalten. Die Buttons haben wir buttonSettings und buttonHome genannt.
+Nun erstellen wir unsere Code Datein für die Fragmente. Dazu erstellen wir direkt in userem Projekt \ 2 Fragmente:
+ 1. FragmentHome.cs
+ 2. FragmentSettings.cs
 
-    ![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectFragmentCreateCode.png)
+![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectFragmentCreateCode.png)
 
-    Den Code der Dateien ändern wir wie folgt ab:
-      FragmentHome.cs
+Den Code der Dateien ändern wir wie folgt ab:
+ 1. FragmentHome.cs
 
       using Android.OS;
       using Android.Views;
@@ -149,7 +150,7 @@ Schritt 3: Fragmente (Seiten) erstellen
           }
       }
 
-      FragmentSettings.cs
+ 2. FragmentSettings.cs
 
       using Android.OS;
       using Android.Views;
@@ -179,11 +180,11 @@ Schritt 3: Fragmente (Seiten) erstellen
 Schritt 4: Unsere erstellten Fragmente der MainActivity zuweisen
 ================================================================
 
-  Dies ist der letzte Schritt. Wir müssen unsere Fragmente jetzt der MainActivity zuweisen, sodass wir zwischen ihnen navigieren können.
-  Außerdem müssen wir unsere Resource\layout\activity_main.axml anpassen, damit sie unsere Fragmente anzeigen kann.
+Dies ist der letzte Schritt. Wir müssen unsere Fragmente jetzt der MainActivity zuweisen, sodass wir zwischen ihnen navigieren können.
+Außerdem müssen wir unsere Resource\layout\activity_main.axml anpassen, damit sie unsere Fragmente anzeigen kann.
 
-  Wir öffnen Resource\layout\activity_main.axml und fügen ein FrameLayout ein. Diesem FrameLayout können wir dann unsere Fragmente zuweisen
-  Der Code sieht wie folgt aus:
+Wir öffnen Resource\layout\activity_main.axml und fügen ein FrameLayout ein. Diesem FrameLayout können wir dann unsere Fragmente zuweisen
+Der Code sieht wie folgt aus:
 
   <?xml version="1.0" encoding="utf-8"?>
   <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -211,9 +212,9 @@ Schritt 4: Unsere erstellten Fragmente der MainActivity zuweisen
 
   </RelativeLayout>
 
-  Unser FrameLayout haben wir content_frame genannt.
-  In unserer \MainActivity.cs erstellen wir nun eine Liste mit unseren Fragmenten und laden diese dann in unser content_frame
-  Der Code sieht wie folgt aus:
+Unser FrameLayout haben wir content_frame genannt.
+In unserer \MainActivity.cs erstellen wir nun eine Liste mit unseren Fragmenten und laden diese dann in unser content_frame
+Der Code sieht wie folgt aus:
 
         // Liste unserer Fragmente definieren
         List<Android.Support.V4.App.Fragment> fragments;
@@ -263,4 +264,4 @@ Schritt 4: Unsere erstellten Fragmente der MainActivity zuweisen
             return false;
         }
 
-  Das wars auch. Wir haben nun eine App mit 2 Seiten zwischen denen wir mittels einer BottemNavigationBar navigieren können.
+Das wars auch. Wir haben nun eine App mit 2 Seiten zwischen denen wir mittels einer BottemNavigationBar navigieren können.
