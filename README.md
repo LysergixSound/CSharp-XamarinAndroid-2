@@ -19,14 +19,14 @@ Kurze Erklärung:
   ![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectHierarchie.png)
 
   Die interessantesten Datein und Ordner zum Anfang sind für uns:
-    * \MainActivity.cs
-      * Diese Datei enthählt die Logik für unsere MainActivity, sozusagen unser Start Fenster
-    * \Resources\layout
-      * Dieser Ordner enthählt unsere designten Layouts die wir anzeigen können zu sehen ist auch die Datei activity_main.axml die unser grafisches Layout für MainActivity.cs in XML Form beinhaltet.
-    * \Resources\menu\navigation.xml
-      * Da wir uns für eine Registerkarten-App entschieden haben, wird in unserer App eine untere Navigationsleiste angezeigt. In dieser Datei können wir die angezeigten Menü Items in XML Form definieren
-    * Resources\values\strings.xml
-      * Hier können wir Strings, also Texte, definieren, die wir später im Code und im XML wie Variablen abrufen können.
+    - \MainActivity.cs
+      - Diese Datei enthählt die Logik für unsere MainActivity, sozusagen unser Start Fenster
+    - \Resources\layout
+      - Dieser Ordner enthählt unsere designten Layouts die wir anzeigen können zu sehen ist auch die Datei activity_main.axml die unser grafisches Layout für MainActivity.cs in XML Form beinhaltet.
+    - \Resources\menu\navigation.xml
+      - Da wir uns für eine Registerkarten-App entschieden haben, wird in unserer App eine untere Navigationsleiste angezeigt. In dieser Datei können wir die angezeigten Menü Items in XML Form definieren
+    - Resources\values\strings.xml
+      - Hier können wir Strings, also Texte, definieren, die wir später im Code und im XML wie Variablen abrufen können.
 
 
    MainActivity Code erklärt:
