@@ -20,6 +20,7 @@ Kurze Erklärung:
 
   Die interessantesten Datein und Ordner zum Anfang sind für uns:
   1. \MainActivity.cs
+  
     - Diese Datei enthählt die Logik für unsere MainActivity, sozusagen unser Start Fenster
   2. \Resources\layout
     - Dieser Ordner enthählt unsere designten Layouts die wir anzeigen können zu sehen ist auch die Datei activity_main.axml die unser grafisches Layout für MainActivity.cs in XML Form beinhaltet.
