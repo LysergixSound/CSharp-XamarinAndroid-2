@@ -36,6 +36,7 @@ Schritt 2: Navigationsleiste anpassen:
 In diesem Schritt passen wir unsere Menü Items an.
 öffnet Resources\menu\navigation.xml und ändert den Code wie folgt ab.
 
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
   <item
@@ -49,6 +50,7 @@ In diesem Schritt passen wir unsere Menü Items an.
     android:title="@string/title_settings" />
 
 </menu>
+```
 
 Jetzt haben wir zwei Menü Items erstellt.
 1. android:id
