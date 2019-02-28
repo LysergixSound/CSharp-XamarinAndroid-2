@@ -19,6 +19,7 @@ Kurze Erklärung:
   ![alt text](https://github.com/LysergixSound/CSharp-XamarinAndroid-2/blob/master/Images/projectHierarchie.png)
 
   Die interessantesten Datein und Ordner zum Anfang sind für uns:
+  
     -\MainActivity.cs
       -Diese Datei enthählt die Logik für unsere MainActivity, sozusagen unser Start Fenster
     -\Resources\layout
